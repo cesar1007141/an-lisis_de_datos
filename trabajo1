@@ -1,0 +1,33 @@
+from datasets import load_dataset
+import numpy as np
+
+
+data = {
+    'age': [40, 45, 50, 35, 60, 55, 48, 42, 39, 65],
+    'has_anaemia': [False, True, False, True, False, True, False, True, False, True],
+    'creatinine_phosphokinase_concentration_in_blood': [100, 150, 120, 80, 200, 180, 130, 90, 110, 250],
+    'has_diabetes': [True, False, True, False, True, False, True, False, True, False],
+    'heart_ejection_fraction': [60, 55, 50, 65, 45, 52, 58, 63, 67, 40],
+    'has_high_blood_pressure': [True, False, True, False, True, False, True, False, True, False],
+    'platelets_concentration_in_blood': [300000, 350000, 320000, 280000, 400000, 380000, 330000, 290000, 310000, 450000],
+    'serum_creatinine_concentration_in_blood': [0.8, 1.2, 1.0, 0.7, 1.5, 1.4, 1.1, 0.9, 1.0, 1.8],
+    'serum_sodium_concentration_in_blood': [140, 138, 142, 136, 144, 142, 140, 138, 142, 136],
+    'is_male': [True, False, True, False, True, False, True, False, True, False],
+    'is_smoker': [False, True, False, True, False, True, False, True, False, True],
+    'days_in_study': [90, 120, 80, 110, 150, 130, 100, 140, 95, 160],
+    'is_dead': [False, False, False, False, True, True, False, False, False, True]
+}
+
+
+dataset = {"train": data}
+
+
+edades_lista = dataset["train"]["age"]
+
+
+edades_np = np.array(edades_lista)
+
+
+promedio_edad = np.mean(edades_np)
+
+print(f"El promedio de edad de las personas participantes es: {promedio_edad} años")
